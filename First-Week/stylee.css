@@ -1,0 +1,16 @@
+body{
+    background-color: bisque;
+    text-align: center;
+}
+
+h1{
+    color:blue;
+}
+
+a{
+    color:brown;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
