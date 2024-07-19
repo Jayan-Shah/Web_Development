@@ -1,0 +1,77 @@
+Consider
+---------- 
+<ol>
+<li></li>
+</ol>
+-----------
+In this if we want to apply css style on list such that it does not show numbers or bullets.
+If we are applying it on list 
+
+..............................
+li{
+    list-style:none;
+}
+-----------------------------
+Bullets will be gone but even we can apply one level above
+
+..............................
+ol{
+    list-style:none;
+}
+---------------------------
+Again bullets will be gone as li element will inherit it from ol but this gives us space for targeting the li element in personal
+So if we keep list style none in ol element and we type
+
+..............................
+li{
+    list-style:Square;
+}
+---------------------------
+Now it will override ol element style and give square bullets
+
+..............................
+li{
+    list-style:square;
+    list-style:none;
+}
+--------------------------
+So now evenn square bullet command will be override and it will be set to none;
+
+# Learnings
+This is where conncept of inheritance comes where the child i.e li in above example imherit properties of parent i.e ol.
+Cascading is one another property which states that multiple functions are used on same element.
+And then priority of those functions depends on specificity. More specific the function targets more is its priority.
+
+CSS Box Model
+It  includes three things which makes content looks more perfect that are:
+
+1) Padding which is the space between content and the border
+// Syntax
+padding: top right bottom left
+//
+
+2) Border
+//Syntax
+Border: width type color
+//
+
+3) Margin which is space between border and another contents
+//Syntax
+Margin: (topbottom) (leftright)
+
+Selectors
+There are mainnly four Selectors
+Class :- .Class
+ID:- #ID
+Type:- Elementname
+Group:- elementname,elementname
+
+Combinators:
+li p:- p which has li as ancestor
+h2>p: p who is direct child of h2 
+
+# Margin cannot be applied directly on anchor tag and here is where the concept of inline and block element comes into picture.
+# In order to put margin in anchor tag we can make anchor "display inline-block"
+
+# We can give a better formatting by using box-shadow: width side-width depth  color
+
