@@ -73,5 +73,5 @@ h2>p: p who is direct child of h2
 # Margin cannot be applied directly on anchor tag and here is where the concept of inline and block element comes into picture.
 # In order to put margin in anchor tag we can make anchor "display inline-block"
 
-# We can give a better formatting by using box-shadow: width side-width depth  color
+# We can give a better formatting by using box-shadow: (offset along x axis) (offset along y axis) (radius intensity)  color
 
