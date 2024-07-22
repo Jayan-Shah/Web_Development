@@ -1,0 +1,6 @@
+Git_Basics
+Git keeps the track of small changes done in your project.
+The main folder is stored in the master branch and repositeries are used to keep the track like taking code snapshot.
+Once you commit you can add commit message and it is a better habit if you put name and email of yours.
+
+
