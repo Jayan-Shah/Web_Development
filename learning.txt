@@ -13,4 +13,9 @@ git commit -m "message" :- It commit all the changes added in the track
 git config --global --edit: To see which name and username it is commiting
 git config --global user.name "username" :- Get the username of yours
 git config --global user.email "emailid" :- Get emaild of yours
+git log: Shows all the information of commit and branches
+git branch -m main: Changes the name of master  branch to main
+git checkout -b feature: Create feature branch  and all commits will be stored in it.
+git rm filename: It will delete the file and will be added automatically to delete it
+git reset --hard HEAD ~1: It is used to go to previous commit mentioned how many times by ~1
 
