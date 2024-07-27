@@ -19,3 +19,9 @@ git checkout -b feature: Create feature branch  and all commits will be stored i
 git rm filename: It will delete the file and will be added automatically to delete it
 git reset --hard HEAD ~1: It is used to go to previous commit mentioned how many times by ~1
 git checkout -- . :- TO revert unstaged changes
+
+Reset prcoess for personal token
+ git credential-osxkeychain erase
+ host=github.com 
+ protocol=https
+ 
