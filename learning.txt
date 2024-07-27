@@ -18,4 +18,4 @@ git branch -m main: Changes the name of master  branch to main
 git checkout -b feature: Create feature branch  and all commits will be stored in it.
 git rm filename: It will delete the file and will be added automatically to delete it
 git reset --hard HEAD ~1: It is used to go to previous commit mentioned how many times by ~1
-
+git checkout -- . :- TO revert unstaged changes
