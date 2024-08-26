@@ -1,0 +1,22 @@
+1) Flexbox to make unordered list act as in line element
+2) justify content to work with space associated with Flexbox
+3) Create proper sections so that you can use it in multiple pages
+4)  Removal of margin collapsing between two different sections can be done by basic addition of padding also
+5) Text transform: uppercase;
+6) object fit: for getting accurate size of image in container 
+7) Combinnators are more specific so just an id cannnot overcome combinators directly
+8) background: linear-gradient(degree,second color,first color); (Not background color)
+9) position: static by default and in absolute we check to its parent element
+
+//  Destination pages
+Create card content for showing good images
+1)  overflow: visible(default)
+2) For two dimensional layout we can use css gird and flexbox gives us commmand only in one dimensional look
+3) display: grid 
+4) grid-template-columns: 400px(1st column width) 400px(2nd columns width);
+5) We give grid template column size value in fraction than pixels as we might just not use the entire space availaible in grid
+6) gap: 100px(gap between column) 200px(gap between rows);
+7) li:first-of-type: Gives acess to first list item of ul list
+8) li:nth-of-type(number i want to select)
+9) grid-column: (Start with square position 1)1/(End to position square 3 not 2)3;
+10)
