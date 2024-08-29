@@ -1,0 +1,32 @@
+Responsive Design:-
+// When size of the page is changed only those element changes which are dynamic
+// For eg:- If font size is in pixel it wont change with device so we need more dynamic units
+// So we have %, em and rem units
+.. But em and % depends upon the parent element font size so difficult to handle such cascading nature
+.. rem though depends upon root element font size i.e. html default font size..
+.. In case of other elements than font size percent depends on parent element but em and rem strictly depends on font size only
+
+// Desktop First is an approcah where we start creating websites in desktop view and then check out mobile view for the same. 
+// Mobile First is just vice versa
+
+Media Queries
+@media (min width or max width){
+    p{
+        font-size:2rem;
+    }
+}
+
+// In case of desktop first we normally use max width..
+Common Breakpoints for Media Queries
+Portrait Mode
+1) Smartphones :- 480px
+2) Tablet:- 768px
+
+Landscape Mode
+1) Notebook :- 1024 px 
+2) Desktop Computer:- 1200px
+3) TV:- >1200px
+
+media query should be written taking care of cascading style of css or else it wont make any difference
+
+Hamburger Button and Slidebar
