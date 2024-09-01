@@ -1,0 +1,35 @@
+To add javascript content we use 
+// <script></script>
+Use '' for starting and ending string and if u want to use ' between use \'
+Name variable in Javascript using camel case i.e. camelCase till possible
+
+To decleare a variable
+// let variableName=value;
+For an array
+// let variableName=[value1,value2,...];
+For an object
+// let job={title: value,place:value};
+
+Errors in javascript is seen in console so keep a check tbere
+
+function fucntionName(input parameter){
+    Operations;
+    return something;
+}
+variable = fuction(input you want to give);
+//
+let person={
+    name:"Max",
+    greet(){
+        alert('Hello');
+    }
+};
+
+person.greet();
+//
+The written code is known as method where we define a function within object
+
+NaN ( not a number) when you try to do string - string
+
+
+
