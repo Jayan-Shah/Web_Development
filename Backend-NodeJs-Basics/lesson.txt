@@ -1,0 +1,39 @@
+// Once we run JS code with node JS it no longer shows it on broswer but on the server
+
+// require keyword is used for getting access to functions mentioned within
+
+// amazon.com => Send a request to amazon server
+// amazon.com : 80 / 443
+// port => Entrypoints for network traffic.
+// 80 and 443 are port numbers which takes the request from the browser
+
+// Status Code => Web server communicate the status of request & response via standardized status codes
+200 - Success! Request passed succesfully a response could be
+      generated + sent without any problem
+
+404 - Client side error! The requested resource/ URL was not found.
+
+401 - Client Side error! The requesting client is not authorized to access the requested resource
+
+500 - Server side error! The request was valid but something went wrong on the server
+
+// url = localhost:3000/currenttime
+request.url => consist of /currenttime and not the entire url
+
+
+// new keyword allows us to create JS objects based on certain "blueprints".
+
+// Use third party for making things more comfortable
+npm init is used to install third party creating a json file storinng all info
+npm install express to include node modules into the project
+
+
+// Parsing request data is neccessary before using in JS code by using use() method.
+.use(express.urlencoded({extended: false}))
+Here urlencoded checks all the data of form which is being requested and parsed...
+
+//  If we want to store some data in file once post method is called we need 
+'fs' and 'path' properties
+__dirname is used for locating the main directory where the file is stored.
+
+
