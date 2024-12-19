@@ -1,0 +1,3 @@
+When using css check its default value. 
+Like using anchor tag by defualt the text will be underlined so if we want to hover it showing underline first set its value to none in anchor tag.
+

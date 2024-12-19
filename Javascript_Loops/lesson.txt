@@ -1,0 +1,25 @@
+//Loops
+1) for:-
+- Loop n number of times
+2) for ... of:-
+- Loop through all elements of an array
+3) for ... in :-
+- Loop through all properties in an object
+4) while:-
+- Loop as long as a certain condition is met
+
+const users = ['Max', 'Anna', 'Jayan'];
+for (const user of users) {
+    console.log(user);
+}
+
+const loogedInUser = {
+    name:'Max',
+    age: 32,
+    isAdmin:true
+};
+
+for(const propertyName in loogedInUser){
+    console.log(propertyName);
+    console.log(loogedInUser[propertyName]);
+}

@@ -1,0 +1,34 @@
+Key Form elements
+<input type="">
+//The type attribute controls which type of input will  be shown
+<textarea>
+// A multi-line text input field
+<select>
+// A dropdown multiple choice or multiple select input
+<button>
+A button to reset or submit the form
+
+// Input and button both are inline element in general
+
+<form> has two attributes action="URL where request has to be sent" and method="GET/POST"
+GET is not used for submitting data entirely but to add it to the url 
+POST is actually used to submit the data
+
+<label> written indication for the user </label>
+
+.. for attribute is label is used to connect to the id of the input element. 
+.. Even it automatically focus on the dialogue box when clicked on the label
+
+// label:focus{} gives style when focussed
+<input type="" id="" name="" placeholder="" row="">
+<label for=""></label>
+type to define input type whereas name to fet the input to  server and id is  used with label for what it is being used 
+placholder to mention additional informatoin that user has to give as input
+
+<select>
+<option></option>
+</select>
+
+
+
+

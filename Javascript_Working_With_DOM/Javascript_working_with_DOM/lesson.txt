@@ -1,0 +1,63 @@
+// Globally availaible object
+window and document which holds information and functionality to the active browser
+document object is object of window object.
+
+DOM :- Document Object Model
+The data representation("internal representation") of the parsed HTML code
+THe browser parses our HTML code and savels all elements as Js objects
+Our javascript code is  able to interact  with the DOM and extract data from it or manipulate it. 
+
+We can access alert as window.alert();
+console.log(window) to see the objects of html to  Js
+console.dir(window.document)  to see more detailing of every elements
+
+// document.body.children only gives access to html elements of children of body element
+// document.body.firstChild gives access to the text which is not the html element still as there is white space which is treated as text.
+// To access text and html elements we use document.body.childNodes 
+
+// Problem with drilling is that if we add some new children before the syntax will point to new child which is what will cause error..
+So we come to Query Methods for same purpose than drilling..
+
+We have two options
+Use document.getElementById('ID');
+Use document.querySelector('#ID');
+Query selector can access any html element as query but getElementById is only used for selecting ID Selector.
+
+document.querySelector('a')
+// It will select first anchor tag found in html element.
+// If we want to select all anchor tag then:-
+document.querySelectorAll('a)
+
+// DOM is also mainly used for
+1) Create element
+2) Delete element
+3) Move element around
+4) Add inner html 
+
+// Events
+They are created objects on the  browser where kind of metadata of the entire
+HTML fields is stored which we can use in JS.
+
+
+// To change css
+spanElement.style.attribute = 'String value'
+spanElement.className = 'warning'
+spanElement.classList.add('warning');
+spanElement.classList.remove('warning);
+// ClassName if used we need to overwrite it again so we use class list which makes it simpler.
+
+// Control Statements
+1) Comparison Operators :-
+- i) Equality(Value or type): [==] which checks values and [===] which checks two types of values
+- ii) < , > , >= , <=
+- iii) !, !=, !==
+
+2) Logical Operators
+1) AND &&
+2) OR ||
+
+const enteredUserName = '' 
+// If string length is 0 it will be considered as false 
+
+
+

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Application Form</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+        <h1>Contact Us</h1>
+    </header>
+    <main>
+        <form action="/Web_Form/form.html" method="GET">
+        <h2>Personal Details</h2>
+        <section>
+            <ul>
+                <li>
+                    <label for="username">Full Name</label>
+                    <input type="text" name="user-name" id="username" required placeholder="First Middle Last" />
+                </li>
+                <li>
+                    <label for="emailid">Email address</label>
+                    <input type="email" name="user-email" id="emailid" required placeholder="abc@gmail.com" />
+                </li>
+                <li>
+                    <label for="userage">Contact Number</label>
+                    <input type="tel" name="user-age" id="userage" required minlength="10" maxlength="10"/>
+                </li>
+                <!-- <li>
+                    <label for="userpass">Password</label>
+                    <input type="password" name="user-pass" id="userpass" />
+                </li> -->
+                <li>
+                    <label for="userbday">Birth Date</label>
+                    <input type="date" name="user-bday" id="userbday"  required/>
+                </li>
+                <li>
+                    <label for="usermessage"> Address</label>
+                    <textarea id="usermessage" name="user-message" placeholder="According to your aadhar card" rows="8" required></textarea>
+                </li>
+                <li>
+                    <label for="category" >How did you find us?</label>
+                    <select id="category" name="user-category" required>
+                      <option value="ST">Web-Search</option>
+                      <option value="SC">Reference</option>
+                      <option value="friends">Relatives</option>
+                    </select>
+                </li>
+            </ul>  
+        </section>
+
+          <hr/>
+
+          <h2>How should we reply?</h2>
+          <ul>
+            <li>
+                <div class="form-control-inline">
+                  <input
+                    type="radio"
+                    name="verify"
+                    id-="verify-text-message"
+                    value="text-message"
+                  />
+                  <label for="verify-text-message">Via text message</label>
+                </div>
+            </li>
+            <li>
+                <div class="form-control-inline">
+                  <input type="radio" name="verify" id-="verify-email" value="email" />
+                  <label for="verify-email">Via email</label>
+                </div>
+            </li>
+            <li>
+
+            </li>
+            <div class="form-control-inline">
+              <input
+                type="radio"
+                name="verify"
+                id-="verify-phonecall"
+                value="phone"
+              />
+              <label for="verify-phonecall">Via Call</label>
+          </ul>
+          </div>
+
+          <ul id="Agree-to-terms">
+            <li>
+                <div class="form-control-inline">
+                  <input type="checkbox" name="terms" id="agreeterms" value="contact" />
+                  <label for="agreeterms">Agree to terms??</label>
+                </div>
+            </li>
+          </ul>
+
+          <section>
+            <div id="btn">
+                <button type="reset">Clear</button>
+                <button type="submit">Submit</button>
+            </div>
+          </section>
+
+        </form>
+    </main>
+  </body>
+</html>

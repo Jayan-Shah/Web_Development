@@ -1,0 +1,48 @@
+body{
+    background-color:rgb(141, 143, 144);
+}
+
+#container{
+    position: static;
+}
+
+#pagelogo a{
+    color: rgb(247, 238, 157);
+}
+
+header a{
+    color: rgb(247, 238, 157);;
+}
+
+header nav a:hover{
+    background-color: rgba(245, 248, 212,0.7);
+}
+
+
+main ul{
+    background-color: rgb(250, 245, 199);
+    width: 75%;
+    margin: 20px auto;
+    box-shadow: 4px 4px 4px rgb(60, 61, 61);
+}
+
+main li{
+    padding: 5px 15px;
+    
+}   
+
+main p{
+    border-left: 5px solid transparent;
+    border-color: rgb(26, 43, 43);
+    padding: 5px;
+    font-size: 20px;
+}
+
+h2{
+    text-align: center;
+    margin-top: 25px;
+    color: rgb(248, 242, 222);
+    font-size: 30px;
+    font-family:'Courier New', Courier, monospace;
+
+}

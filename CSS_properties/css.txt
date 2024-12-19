@@ -1,0 +1,17 @@
+CSS variable 
+--color-grey-(Number giving dark or light):rgb();
+background color: var(--color-grey-100);
+
+
+html selector: CSS rules are applied to html element and inherited to nested elements
+:root(pseudo selector) :- Css rules are applied to root elements and inhertied to nested elements inside the root elements
+* selector: Css rules are apllied to all elements
+Specificity must be considered here
+
+CSS Transformation and Transition
+Transformation:- Change appearance of element eg when hovering
+transform: scale(2);
+Transition:- smooth transition from inital to transformed state
+Apply transition to the initial state not on the event triggering the transition
+transition: transform(proprety) 0.5s(duration) ease-out(timing-function) 1s(delay); 
+Scalable Vector Graphics:- XML Based Markup Language i.e text based description of skalable images that can be rendered by the browser
