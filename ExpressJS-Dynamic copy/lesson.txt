@@ -1,0 +1,28 @@
+// Styles and Javascript are static right now and in order to handle this we can keep control of incoming request of style and script
+.use(express.static('FolderName'));
+Foldername consist of all stylesheet and script files which are static right now
+
+// To redirect to new html page we use
+.redirect('file path');
+
+// EJS Template Engine
+1) npm install ejs 
+2) .set('views','path'); //Views is associated with view engine
+3) .set('view engine','ejs');
+
+//Dynamic Routes
+We dont want to create 10 routes for every different restaurant as we dont know how many restaurant are added
+ app.get('/restaurant/:id')
+ :id is the dynamic route where we can use same page with different data
+
+
+// To export and import functions in node
+const resData = require('path of file to be imported');
+module.exports={
+    getStoredRestaurants: getStoredRestaurants,
+    storedRestaurants:storeRestaurants
+};
+
+
+
+
