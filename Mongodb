@@ -1,0 +1,129 @@
+// 1. Import the MongoClient class from the 'mongodb' driver
+const { MongoClient, ObjectId } = require("mongodb"); // ObjectId is needed for querying by _id
+
+// --- Configuration ---
+
+// 2. Connection URI: Replace with your MongoDB deployment's connection string.
+//    For local MongoDB: 'mongodb://localhost:27017'
+//    For MongoDB Atlas: Get the string from your Atlas cluster dashboard.
+const uri = "mongodb://localhost:27017"; // !! IMPORTANT: Use your actual connection string !!
+
+// 3. Database Name: Specify the database you want to connect to.
+const dbName = "myCrudDatabase";
+
+// 4. Collection Name: Specify the collection you want to work with.
+const collectionName = "items";
+
+// --- Main Async Function ---
+
+// 5. Define an async function to encapsulate our database logic.
+async function runDatabaseOperations() {
+  // 6. Create a new MongoClient instance. Best practice is one instance per app.
+  const client = new MongoClient(uri, {
+    useNewUrlParser: true, // 7. Option for the driver's parser (recommended, though becoming default)
+    useUnifiedTopology: true, // 8. Option for the new connection management engine (recommended)
+  });
+
+  console.log("Attempting to connect to MongoDB...");
+
+  // 9. Use a try...catch...finallty block for connection and operations.
+  try {
+    // 10. Connect the client to the server. This returns a Promise.
+    await client.connect();
+    console.log("Successfully connected to MongoDB server!");
+
+    // 11. Get a reference to the specific database.
+    const database = client.db(dbName);
+    console.log(`Connected to database: ${dbName}`);
+
+    // 12. Get a reference to the specific collection.
+    const collection = database.collection(collectionName);
+    console.log(`Using collection: ${collectionName}`);
+
+    // --- CRUD Operations ---
+
+    // === CREATE ===
+    console.log("\n--- Performing CREATE operation ---");
+    // 13. Define a sample document to insert.
+    const newItem = {
+      name: "Laptop",
+      quantity: 5,
+      category: "Electronics",
+      addedOn: new Date(), // Store the current date
+    };
+    // 14. Insert the document into the collection using insertOne.
+    const insertResult = await collection.insertOne(newItem);
+    // 15. insertOne returns an object with info like acknowledged status and insertedId.
+    console.log(`New item created with _id: ${insertResult.insertedId}`);
+
+    // === READ ===
+    console.log("\n--- Performing READ operations ---");
+    // 16. Read a single document: Find the item we just inserted using its _id.
+    const findOneResult = await collection.findOne({
+      _id: insertResult.insertedId,
+    });
+    // 17. findOne returns the first matching document found, or null if none match.
+    console.log("Found one item by ID:", findOneResult);
+
+    // 18. Read multiple documents: Find all items in the 'Electronics' category.
+    const findMultipleResultCursor = collection.find({
+      category: "Electronics",
+    });
+    // 19. find returns a Cursor, which is an iterator-like object.
+    // 20. Use toArray() on the cursor to get all matching documents as an array.
+    const electronicsItems = await findMultipleResultCursor.toArray();
+    console.log(
+      `Found ${electronicsItems.length} items in Electronics category:`,
+      electronicsItems
+    );
+
+    // === UPDATE ===
+    console.log("\n--- Performing UPDATE operation ---");
+    // 21. Update a single document: Increase the quantity of the laptop.
+    //     Filter: Specify which document(s) to update ({ _id: ... }).
+    //     Update Operator Document: Specify the changes ({ $set: { field: value } }).
+    const updateResult = await collection.updateOne(
+      { _id: insertResult.insertedId }, // Filter: Find the document by its ID
+      { $set: { quantity: 10, status: "In Stock" } } // Update: Set quantity to 10, add status
+    );
+    // 22. updateOne returns info like matchedCount and modifiedCount.
+    console.log(
+      `Matched ${updateResult.matchedCount} document(s) and modified ${updateResult.modifiedCount} document(s).`
+    );
+
+    // 23. Read the updated document to verify.
+    const updatedItem = await collection.findOne({
+      _id: insertResult.insertedId,
+    });
+    console.log("Updated item:", updatedItem);
+
+    // === DELETE ===
+    console.log("\n--- Performing DELETE operation ---");
+    // 24. Delete a single document using its _id.
+    const deleteResult = await collection.deleteOne({
+      _id: insertResult.insertedId,
+    });
+    // 25. deleteOne returns info like acknowledged status and deletedCount.
+    console.log(`Deleted ${deleteResult.deletedCount} document(s).`);
+
+    // 26. Try to find the deleted document (should return null).
+    const findDeletedResult = await collection.findOne({
+      _id: insertResult.insertedId,
+    });
+    console.log("Attempting to find deleted item:", findDeletedResult); // Should be null
+  } catch (err) {
+    // 27. Catch any errors that occur during connection or operations.
+    console.error("An error occurred:", err);
+  } finally {
+    // 28. The finally block always executes, whether try succeeded or failed.
+    console.log("\nClosing MongoDB connection...");
+    // 29. Ensure that the client connection is closed when we finish/error.
+    await client.close();
+    console.log("MongoDB connection closed.");
+  }
+}
+
+// 30. Call the main async function to start the process.
+// 31. Add a .catch() to the call to handle any potential unhandled promise rejections
+//     from the main function itself (though errors inside should be caught by try/catch).
+runDatabaseOperations().catch(console.error);
