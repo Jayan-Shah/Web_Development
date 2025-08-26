@@ -1,0 +1,38 @@
+const user = getUser(1);
+
+function getUser(id){
+    setTimeout(()=>{
+        console.log('Reading a user from a database...');
+        return {id:id,gitHubUsername:'mosh'};
+    },2000);
+
+Here if I will call getUser function as return function is in setTimeout it will return undefined as it has not yet finished its processing...
+So there are three patterns by which we handle async functions
+
+1. Callbacks
+2. Promises
+3. Async/await
+
+
+// Callbacks
+// Async Code
+    getUser(1, (user)=>{
+        getRepo(user.gitHubUsername,(repos)=>{
+            getCommits(repo,(commits)=>{
+            });
+            // CallBack Hell :- So nested async functions...
+        });
+    });
+
+// Same Sync code
+const user=getUser(1);
+const repos = getRepos(user.gitHubUsername);
+const commits = getCommits(repos[0]);
+console.log('After');
+
+// Promises to rescue
+Promises holds the eventual result of an asyc operation
+When we create promise it is in pending state so now it kicks of async operation
+If successfully created then fulfilled state or if some error then rejected state...
+
+// Async await

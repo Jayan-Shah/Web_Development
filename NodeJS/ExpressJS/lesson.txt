@@ -1,0 +1,84 @@
+// RESTful   Services
+REST --> Representational State Tranfer
+
+//HTTP Methods
+GET --> To get data
+POST --> Creating data
+PUT --> Updating data
+DELETE --> To delete data
+
+// Express.js is used to simplify http module of node.js
+// nodemon is used in order to detect changes and restart the server by itself
+
+// PORT :- Environment Variable : Variable in which the process runs.
+const port = process.env.PORT || 3000;
+app.listen(port,()=>console.log(`Listening on port ${port}...`));
+// export PORT = 5000 for macos or set PORT=5000 for windows
+We can assign different ports and this helps in testing environment and deployment as there the port is different...
+
+// Route Parameters
+/api/courses/:id/year
+Here  id and year are route parameters...
+- req.params is used
+
+//Query Parameters
+Anything after ? in order to get better detailed view
+/api/courses/year/month?sortBy=name
+- req.query is used
+
+// POSTMAN can be used for calling endpoints for POST requests
+
+// Middleware
+A middleware is a function which takes the request and send back the response or pass the request to another middleware
+-Every Route Handler Function is a middleware where client request are handled
+- .use(express.json()) is also a middleware
+It finds json in the body of the request and then it passes the json object in the req.body finally..
+
+// Request Processing Pipeline
+Request --> Middleware --> Middleware --> Response
+Example
+Request --> json() --> route()  --> response
+
+Built in middleware
+json 
+urlencoded --> express.urlencoded({extended:true});
+-This extended true is used in order to parse complex objects
+static
+app.use(express.static('public)); //In this all files of frontend can be used here
+
+// Third Party Middleware 
+helmet //Securing various http headers...
+morgan // Logs all the request...
+
+// Different Environment
+It can be development environment, testing environment and production environment... 
+Just like morgan has to be used only in development environmennt
+
+SETUP
+process.env.NODE_ENV // Setup here as initially its undefined
+app.get('env'); // Default is development 
+
+//Configuration Settings
+node package : rc // popular but not okayish
+node package: config // more cleaner
+
+
+// Exporting password from env variable not from config file or else hacking can be done...
+export app_password=1234 and store app:password as password in config...
+
+//Debugging can be done using env variable
+- Can be done by debug
+export DEBUG= if you dont want to see
+export DEBUG=app:startup,DEBUG=app:db
+export DEBUG=app:* for selecting all
+DEBUG=app:db nodemon custom.js  -- Shortcut
+
+
+// Templating Engine : Return dynamic html to the client
+1. Pug
+2. Mustache
+3. EJS
+
+//Structure Express.js
+We work with router 
+So app becomes router

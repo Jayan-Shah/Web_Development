@@ -1,0 +1,90 @@
+// Nodejs is a runtime environment for JS
+So now when we use window in JS but in NodeJS it shows error as there is no window object in NodeJS.
+Whereas global object for NodeJS is global just like window.
+console.log is a global object which can be used annywhere.
+var message ='';
+So if we do console.log(global.message) it shows undefined as output.
+
+//modules
+var sayHello = function(){}
+window.sayHello() //Now this has global scope 
+So the problem is now if we have two files using same function one will overwrite on another.
+
+Here comes the concept of module.
+Module has a private scope. We need to export 
+So in node every file is a module and this module is not global.
+
+jshint is a tool used to debug JS file.
+
+//Module Wrapper function
+So any module is wrapped in a function 
+function(export,require,module,__filename,__dirname)
+
+
+// Path Module
+To Load module type
+require('path');
+//os module
+require('os');
+// File Module
+require('fs');
+//Event Module
+Event is simply a signal something has happened.
+Events : Whenever any request is sent to the server an event occurs to which server needs to react.
+
+// Node Package Manager(npm)
+Node and npm are built independently.
+To install npm with version:- sudo npm i -g npm@5.5.1
+// npm init: In order to create package.json
+Package.json consist of metadata of entire project.
+
+// In order to quickly create package
+npm init --yes
+
+// Installing a node package
+npm i underscore(i is install)
+
+//To find npm pacakges
+npmjs.com
+
+//.gitignore file
+It is used to state which files should not be included in git respo
+
+// Semantic Versioning
+We have three Versioning
+Major.Minor.Patch
+Patch is used if some bug is found so update can change that i.e. 2.3.4 -> 2.3.5
+Minor update is adding few features or something so changing that
+Major update and changes change initial number.
+
+// Caret Character(^)
+This is used for keeping intact patches and download latest version
+//Tilde Character(~)
+This is used for keeping intact patches and download latest version but if major or minor version is changed.
+
+// To check dependecies for my application
+npm list --depth=0
+npm view mongoose dependencies
+npm view mongoose versions // To see all versions in order to downgrade or upgrade
+npm outdated //To see outdated dependencies
+npm update //To update all dependencies
+sudo npm i -g npm-check-updates(ncu -u)
+npm-demo % npm install jshint --save-dev
+
+// To uninstall
+npm un dependecies
+
+//Global Packages 
+- npm
+-ng(Angular)
+-g which means global
+npm -g outdated to see all global packages
+
+// Publish Node packages
+npm adduser
+npm login
+npm publish // Now can be used for other projects
+
+To update in the published
+npm version minor 
+npm publish
